@@ -24,4 +24,4 @@ const App = () => <MultiLevelNavbar tree={tree} className="nav" />
 
 ## Demo
 
-Coming soon
+[![compassionate-feather-95tgk](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/compassionate-feather-95tgk)
