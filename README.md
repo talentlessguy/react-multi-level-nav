@@ -1,6 +1,6 @@
 # react-multi-level-nav
 
-Style-less multi-level navigation bar component for React. Doesn't depend on any CSS-in-JS library, neither uses Sass.
+Mmulti-level navigation bar component for React.
 
 ## Install
 
