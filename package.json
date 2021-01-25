@@ -1,9 +1,10 @@
 {
   "name": "react-multi-level-nav",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Multi-level navigation bar component for React",
   "main": "dist/index.umd.js",
   "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "rollup -c",
     "prepare": "npm run build"
