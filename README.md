@@ -1,6 +1,6 @@
 # react-multi-level-nav
 
-Style-less multi-level navigation bar component for React.
+Style-less multi-level navigation bar component for React. Doesn't depend on any CSS-in-JS library, neither uses Sass.
 
 ## Install
 
@@ -21,3 +21,7 @@ const tree: NavTree = {
 
 const App = () => <MultiLevelNavbar tree={tree} className="nav" />
 ```
+
+## Demo
+
+Coming soon
