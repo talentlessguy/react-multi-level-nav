@@ -6,7 +6,7 @@
   "module": "dist/index.js",
   "scripts": {
     "build": "rollup -c",
-    "prepare": "npm build"
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
