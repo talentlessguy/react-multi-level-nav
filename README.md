@@ -28,6 +28,6 @@ const App = () => <MultiLevelNavbar tree={tree} className="nav" />
 
 [![compassionate-feather-95tgk](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/compassionate-feather-95tgk)
 
-[npm-badge]: https://img.shields.io/npm/v/react-multi-level-nav?style=flat-square&color=%234AB8F2
-[dl-badge]: https://img.shields.io/npm/dt/react-multi-level-nav?style=flat-square&color=%234AB8F2
+[npm-badge]: https://img.shields.io/npm/v/react-multi-level-nav?style=flat-square
+[dl-badge]: https://img.shields.io/npm/dt/react-multi-level-nav?style=flat-square
 [npm-url]: https://npmjs.com/package/react-multi-level-nav
