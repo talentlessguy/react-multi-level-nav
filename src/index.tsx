@@ -2,7 +2,7 @@ import * as React from 'react'
 import { PropsWithChildren, useState, useEffect } from 'react'
 
 export interface NavTree<T = any> {
-  [section: string]: T[]
+  [section: string]: T[] | T
 }
 
 export type MultilevelNavbarProps<T = any> = PropsWithChildren<{
@@ -19,19 +19,25 @@ const NavItem = ({ title, items, classPrefix }: { title: string; items: any[]; c
 
   return (
     <div className={classPrefix + '_item'} onBlur={() => set(false)}>
-      <button className={classPrefix + '_title'} onMouseOver={() => set(!vis)}>
-        {title}
-      </button>
-      <ul
-        key={title}
-        className={`${classPrefix}_list ${classPrefix}_${vis ? 'multilevel_visible' : 'multilevel_hidden'}`}
-      >
-        {items.map((v, i) => (
-          <li className={classPrefix + '_list_item'} key={i}>
-            {v}
-          </li>
-        ))}
-      </ul>
+      {Array.isArray(items) ? (
+        <>
+          <button className={classPrefix + '_title'} onClick={() => set(!vis)}>
+            {title}
+          </button>
+          <ul
+            key={title}
+            className={`${classPrefix}_list ${classPrefix}_${vis ? 'multilevel_visible' : 'multilevel_hidden'}`}
+          >
+            {items.map((v, i) => (
+              <li className={classPrefix + '_list_item'} key={i}>
+                {v}
+              </li>
+            ))}
+          </ul>
+        </>
+      ) : (
+        items
+      )}
     </div>
   )
 }
