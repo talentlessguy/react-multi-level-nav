@@ -5,7 +5,12 @@ export interface NavTree<T = any> {
   [section: string]: T[]
 }
 
-export type MultilevelNavbarProps<T = any> = PropsWithChildren<{ tree: NavTree<T>; className: string }>
+export type MultilevelNavbarProps<T = any> = PropsWithChildren<{
+  tree: NavTree<T>
+  className: string
+  preChildren: any
+  postChildren: any
+}>
 
 const NavItem = ({ title, items, classPrefix }: { title: string; items: any[]; classPrefix: string }) => {
   const [vis, set] = useState(false)
@@ -14,7 +19,7 @@ const NavItem = ({ title, items, classPrefix }: { title: string; items: any[]; c
 
   return (
     <div className={classPrefix + '_item'} onBlur={() => set(false)}>
-      <button className={classPrefix + '_title'} onClick={() => set(!vis)}>
+      <button className={classPrefix + '_title'} onMouseOver={() => set(!vis)}>
         {title}
       </button>
       <ul
@@ -31,14 +36,22 @@ const NavItem = ({ title, items, classPrefix }: { title: string; items: any[]; c
   )
 }
 
-export const MultiLevelNavbar = ({ tree, className = 'nav', ...props }: MultilevelNavbarProps) => {
+export const MultiLevelNavbar = ({
+  tree,
+  className = 'nav',
+  preChildren,
+  postChildren,
+  ...props
+}: MultilevelNavbarProps) => {
   return (
     <nav {...props} className={className}>
+      {preChildren}
       <div className={className + '_container'}>
         {Object.entries(tree).map(([k, v]) => (
           <NavItem classPrefix={className} title={k} items={v} />
         ))}
       </div>
+      {postChildren}
     </nav>
   )
 }
