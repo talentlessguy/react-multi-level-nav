@@ -5,12 +5,14 @@ export interface NavTree<T = any> {
   [section: string]: T[] | T
 }
 
-export type MultilevelNavbarProps<T = any> = PropsWithChildren<{
-  tree: NavTree<T>
-  className: string
-  preChildren: any
-  postChildren: any
-}>
+export type MultilevelNavbarProps<T = any> = Partial<
+  PropsWithChildren<{
+    tree: NavTree<T>
+    className: string
+    preChildren: any
+    postChildren: any
+  }>
+>
 
 const NavItem = ({ title, items, classPrefix }: { title: string; items: any[]; classPrefix: string }) => {
   const [vis, set] = useState(false)
