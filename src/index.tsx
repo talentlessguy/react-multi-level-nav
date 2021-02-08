@@ -20,7 +20,7 @@ const NavItem = ({ title, items, classPrefix }: { title: string; items: any[]; c
   useEffect(() => void set(false), [])
 
   return (
-    <div className={classPrefix + '_item'} onBlur={() => set(false)}>
+    <div className={classPrefix + '_item'} onBlurCapture={() => set(false)}>
       {Array.isArray(items) ? (
         <>
           <button className={classPrefix + '_title'} onClick={() => set(!vis)}>

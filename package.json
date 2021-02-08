@@ -1,6 +1,6 @@
 {
   "name": "react-multi-level-nav",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Multi-level navigation bar component for React",
   "main": "dist/index.umd.js",
   "module": "dist/index.js",
